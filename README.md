@@ -10,6 +10,9 @@ Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
 - [Background](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
 
+# Tutorials
+- [React typescript!](TutorialReactTs.md)
+
 # Getting started
 
 ## Add nuget package
