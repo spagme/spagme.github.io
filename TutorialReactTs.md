@@ -1,4 +1,4 @@
-# Create React Typescript application with .NET 6 API
+# Create React Typescript application with .NET 6 minimal API
 
 ## Create the React application
 
@@ -75,66 +75,75 @@ _Program.cs_
 using Spagme;
 using Api;
 
-//Create app builder
+//Create app
 var builder = WebApplication.CreateBuilder(args);
 
-//Dependency injection
+//Set up services
 builder.Services.AddTransient<IMyApi, MyApi>();
+builder.Services.AddCors();
 
-//Build
+//Build app
 var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    //Generate client file
+    SpagmeGen.Ts(typeof(IMyApi), "../hello-app/src/myapi.ts");
+
+    //Allow CORS on localhost
+    app.UseCors(x => x.SetIsOriginAllowed(origin => origin.ToLower().Contains("localhost")));
+}
 
 //Use routing
 app.UseRouting();
 
 //Add Spagme endpoint
-app.UseEndpoints(endpoints =>
-{
-    //Spagme api endpoint
-    endpoints.Map("myapi/{method}", async context =>
-    {
-        //Get which method is called
-        var method = context.Request.RouteValues["method"]?.ToString();
-        if (string.IsNullOrWhiteSpace(method))
-        {
-            context.Response.StatusCode = StatusCodes.Status400BadRequest;
-            await context.Response.WriteAsync("method is null");
-        }
-
-        try
-        {
-            //Parse input parameters
-            var input = context.Request.HasFormContentType
-                ? context.Request.Form.ToDictionary(o => o.Key.ToLower(),
-                 pair => pair.Value.ToString())
-                : context.Request.Query.ToDictionary(o => o.Key.ToLower(),
-                 pair => pair.Value.ToString());
-
-            //Call the api
-            var myapi = endpoints.ServiceProvider.GetService<IMyApi>();
-            var resp = await SpagmeApi.Call(myapi, method, input);
-
-            //Create response
-            context.Response.StatusCode = StatusCodes.Status200OK;
-            context.Response.ContentType = System.Net.Mime.MediaTypeNames.Application.Json;
-            await context.Response.WriteAsync(resp);
-            return;
-
-        }
-        catch (Exception exc)
-        {
-            //Internal server error
-            var logger = endpoints.ServiceProvider.GetService<ILogger<MyApi>>();
-            if(logger!=null) logger.LogError(exc, $"Error when calling method {method}");
-            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-            await context.Response.WriteAsync(exc.Message);
-            return;
-        }
-    });
-});
+//The endpoint will be: http(s)://<host>/myapi
+app.UseSpagmeEndpoint(typeof(IMyApi), "myapi");
 
 //Start application
 app.Run();
 ```
 
-## Create the API
+## Update React app
+
+Remember to update https://host with you host given to you by .NET
+
+_App.tsx_
+
+```ts
+import { useEffect, useState } from "react";
+import "./App.css";
+import { Api } from "./myapi";
+
+function App() {
+  const [greeting, setGreeting] = useState<string>("");
+
+  useEffect(() => {
+    var api = new Api("https://host/myapi");
+    api.hello("Mr", "President").then((o) => {
+      setGreeting(o?.greeting ?? "");
+    });
+  }, []);
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <p>{greeting}</p>
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
+## Run react App
+
+```
+yarn start
+```
+
+Go to http://localhost:3000
+
+![](/content/img/TutorialReactTs1.png)
