@@ -107,7 +107,7 @@ app.Run();
 
 ## Update React app
 
-Remember to update https://host with you host given to you by .NET
+Remember to update https://host with your host given to you by .NET
 
 _App.tsx_
 
