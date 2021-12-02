@@ -111,7 +111,7 @@ Remember to update https://host with your host given to you by .NET
 
 _App.tsx_
 
-```ts
+```tsx
 import { useEffect, useState } from "react";
 import "./App.css";
 import { Api } from "./myapi";
