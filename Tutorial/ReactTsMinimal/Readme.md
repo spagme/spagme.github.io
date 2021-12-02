@@ -146,4 +146,4 @@ yarn start
 
 Go to http://localhost:3000
 
-![](/content/img/TutorialReactTs1.png)
+![](TutorialReactTs1.png)
