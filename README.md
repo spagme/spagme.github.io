@@ -12,4 +12,7 @@ Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
 # Tutorials
 
-- [Create React Typescript application with .NET 6 minimal API](/Tutorial/ReactTsMinimal)
+## React
+
+- [React typescript app with .NET 6 minimal API](/Tutorial/ReactTypescriptMinimal)
+- [React javascript app with .NET 6 minimal API](/Tutorial/ReactJavascriptMinimal)

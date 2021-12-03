@@ -1,11 +1,11 @@
-# Create React Typescript application with .NET 6 minimal API
+# React typescript app with .NET 6 minimal API
 
 ## Create the React application
 
 The simplest way to create a React Typesprict app is to use the "create-react-app" command
 
 ```
-yarn create-react-app hello-app --template typescript
+npx create-react-app hello-app --template typescript
 ```
 
 ## Create the .NET 6 API web app
