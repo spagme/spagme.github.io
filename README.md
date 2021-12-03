@@ -21,7 +21,7 @@ Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
 ## Introduction
 
-Here we will create a React javascript app with a Spagme API
+Here we will create a React javascript app with a Spagme API using minimal .NET 6 API template.
 
 ## Create the React application
 
