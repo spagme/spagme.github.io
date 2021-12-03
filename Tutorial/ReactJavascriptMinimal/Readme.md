@@ -121,7 +121,7 @@ function App() {
 
   useEffect(() => {
     var api = new Api();
-    api.url = "http://localhost:5000/myapi";
+    api.url = "https://host/myapi";
     api.hello("Mr", "President").then((o) => {
       setGreeting(o?.greeting ?? "");
     });
