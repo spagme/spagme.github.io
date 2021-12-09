@@ -1,8 +1,8 @@
 # Spagme
 
-Spagme is a framework that creates client code based on an API that is hosted in a aspnet web application and is defined by a C# class or interface.
+Spagme is a lightweight framework that creates client code based on an API that is hosted in a aspnet web application and is defined by a C# class or interface.
 
-Currently supported client languages are Typescript and Javascript.
+Currently supported client languages are typescript and javascript.
 
 Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
@@ -10,7 +10,7 @@ Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
 Looking for an alternative to generate javasript or typescript client code for an .NET API? Usually this is accomplished by using Swagger or GraphQL and some client code generation plugin. With Spagme you get both. Simplify your development process and save time.
 
-All you need to do is to create a API by creating an interface and a corresponding implementing class. Then Spagme will generate all the client code and assist you to create and endpoint in backend.
+All you need to do is to create an API by creating a C# interface and a corresponding implementing C# class. Then Spagme will generate all the client code and assist you to create an endpoint in backend. No need for controllers.
 
 Spagme supports:
 
@@ -22,7 +22,7 @@ Spagme supports:
 
 # Articles
 
-- [Background](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
+- [Medium background article by founder](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
 
 # Tutorials
 
