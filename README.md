@@ -6,6 +6,20 @@ Currently supported client languages are Typescript and Javascript.
 
 Spagme is an alternative to GraphQL or Swagger/OpenApi.
 
+# Introduction
+
+Looking for an alternative to generate javasript or typescript client code for an .NET API? Usually this is accomplished by using Swagger or GraphQL and some client code generation plugin. With Spagme you get both. Simplify your development process and save time.
+
+All you need to do is to create a API by creating an interface and a corresponding implementing class. Then Spagme will generate all the client code and assist you to create and endpoint in backend.
+
+Spagme supports:
+
+- Primitives i.e. int, bool, etc
+- Enums
+- Objects containing primitives and enums
+- Collections i.e. array and lists
+- Nested objects
+
 # Articles
 
 - [Background](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
