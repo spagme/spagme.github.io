@@ -31,6 +31,10 @@ Spagme supports:
 - [React typescript app with .NET 6 minimal API](/Tutorial/ReactTypescriptMinimal)
 - [React javascript app with .NET 6 minimal API](/Tutorial/ReactJavascriptMinimal)
 
+## Angular
+
+- [Angular typescript app with .NET 6 minimal API](/Tutorial/AngularTypescriptMinimal)
+
 # Quickstart
 
 ## Introduction
