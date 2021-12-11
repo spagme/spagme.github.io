@@ -122,7 +122,7 @@ import { Api, ApiBase } from "./myapi";
 })
 export class ApiServiceImpl extends Api {
   constructor() {
-    super("http://localhost:5000/myapi");
+    super("https://host");
   }
 }
 
