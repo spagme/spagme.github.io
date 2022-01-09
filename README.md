@@ -22,7 +22,7 @@ Spagme supports:
 
 # Articles
 
-- [Medium background article by founder](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
+- [Background Medium article](https://medium.com/@nilsflemstrom/spagme-a91067c23764)
 
 # Tutorials
 
